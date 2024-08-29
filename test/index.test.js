@@ -56,6 +56,7 @@ describe('4. leerArchivos', () => {
   })
 })
 
+// Vi que no había un test para la función delay entonce me tomé el atrevimiento de agregarlo
 describe('5. demorar respuesta', () => {
   it('5.1. demorar respuesta', async () => {
     const respuesta = await delay(100)
