@@ -1,6 +1,6 @@
-import { ping, obtenerDatosPromise, procesarArchivoPromise, procesarArchivo, leerArchivos } from '../solutions/index.js'
+import { ping, obtenerDatosPromise, procesarArchivoPromise, procesarArchivo, leerArchivos, delay } from '../solutions/index.js'
 
-import { describe, it, beforeEach, afterEach } from 'node:test'
+import { describe, it, afterEach } from 'node:test'
 import { equal, ifError } from 'node:assert/strict'
 import { unlinkSync, writeFileSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
@@ -53,5 +53,13 @@ describe('4. leerArchivos', () => {
   it('4.1. leerArchivos', async () => {
     const mensaje = await leerArchivos()
     equal(mensaje, 'hola qué tal')
+  })
+})
+
+// Vi que no había un test para la función delay entonce me tomé el atrevimiento de agregarlo
+describe('5. demorar respuesta', () => {
+  it('5.1. demorar respuesta', async () => {
+    const respuesta = await delay(100)
+    equal(respuesta, 'respuesta')
   })
 })
